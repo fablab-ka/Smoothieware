@@ -60,6 +60,32 @@ function getTemperature () {
   runCommand("M105", false);
 }
 
+function startSpindle() {
+  runCommand("M3 S5000", false);
+}
+
+function stopSpindle() {
+  runCommand("M5", false);
+}
+
+function getCurrentPosition() {
+  runCommandCallback("M114", function(data) {
+    //TODO visualize
+  });
+}
+
+function pauseProgress() {
+  runCommand("M600", false);
+}
+
+function resumeProgress() {
+  runCommand("M601", false);
+}
+
+function halt() {
+  runCommand("M112");
+}
+
 function handleFileSelect(evt) {
     var files = evt.target.files; // handleFileSelectist object
 
