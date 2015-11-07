@@ -1,1 +1,1 @@
-docker build -t smoothieware . && docker run -v /src:/Users/svenhe/projects/fablab/CNC/Smoothieware smoothieware
+docker build -t smoothieware . && docker run -v /src:`pwd` smoothieware
